@@ -13,6 +13,8 @@ import Main from "./Main";
 import MainFeaturedPost from "./MainFeaturedPost";
 import FeaturedPost from "./FeaturedPost";
 import { post1 } from "./blog-post.1";
+import axios from "axios";
+import { useData } from "./useData";
 
 const sections = [
   { title: "Technology", url: "#" },
@@ -84,6 +86,19 @@ const posts = [post1];
 const defaultTheme = createTheme();
 
 export default function Home() {
+  const [{ data, isLoading, isError }, doFetch] = useData(
+    "https://akabab.github.io/starwars-api/api/all.json"
+  );
+
+  console.log(data?.[0].image);
+  const mainFeaturedPost = {
+    title: data?.[0].name ?? "",
+    description: data?.[0].manufacturer ?? "",
+    image: data?.[0].image ?? "",
+    imageText: data?.[0].name ?? "",
+    linkText: "Continue reading…",
+  };
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />

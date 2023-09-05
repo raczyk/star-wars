@@ -54,6 +54,7 @@ export default function MainFeaturedPost(props: MainFeaturedPostProps) {
           <Box
             sx={{
               position: "relative",
+              height: 500,
               p: { xs: 3, md: 6 },
               pr: { md: 0 },
             }}
