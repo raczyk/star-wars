@@ -13,6 +13,7 @@ interface FeaturedPostProps {
     image: string;
     imageLabel: string;
     title: string;
+    wiki: string;
   };
 }
 
@@ -33,13 +34,19 @@ export default function FeaturedPost(props: FeaturedPostProps) {
             <Typography variant="subtitle1" paragraph>
               {post.description}
             </Typography>
-            <Typography variant="subtitle1" color="primary">
-              Continue reading...
-            </Typography>
+            <a href={post.wiki} target="_blank" rel="noreferrer">
+              <Typography variant="subtitle1" color="primary">
+                Continue reading...
+              </Typography>
+            </a>
           </CardContent>
           <CardMedia
             component="img"
-            sx={{ width: 160, display: { xs: "none", sm: "block" } }}
+            sx={{
+              width: 160,
+              height: 200,
+              display: { xs: "none", sm: "block" },
+            }}
             image={post.image}
             alt={post.imageLabel}
           />

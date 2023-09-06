@@ -2,10 +2,32 @@ import * as React from "react";
 import axios from "axios";
 
 type Data = {
-  name: string;
-  id: string;
-  manufacturer: string;
+  date: string;
+  description: string;
   image: string;
+  imageLabel: string;
+  title: string;
+  affiliations: string[];
+  apprentices: string[];
+  born: number;
+  manufacturer: string;
+  bornLocation: string;
+  cybernetics: string;
+  died: number;
+  diedLocation: string;
+  eyeColor: string;
+  formerAffiliations: string[];
+  gender: string;
+  hairColor: string;
+  height: number;
+  homeworld: string;
+  id: number;
+  mass: number;
+  masters: string[];
+  name: string;
+  skinColor: string;
+  species: string;
+  wiki: string;
 };
 
 export const useData = (initialUrl: string, initialData?: unknown) => {
